@@ -31,5 +31,3 @@ RUN docker-php-ext-configure gd \
 
 COPY php.ini /usr/local/etc/php/
 COPY php-fpm.conf /usr/local/etc/php/
-# RUN rm /usr/local/etc/php/pool.d/www.conf
-# COPY pool.d/printfirm.conf /usr/local/etc/php/pool.d/
