@@ -1,0 +1,30 @@
+version: '2'
+services:
+    nginx:
+        build: ./nginx
+        ports:
+            - 80:80
+            - 443:443
+        links:
+            - php
+        volumes:
+            - ./xcart:/var/www/xcart 
+
+    php:
+        build: ./php 
+        expose:
+            - 9000
+        links:
+            - mariadb 
+        volumes:
+            - ./xcart:/var/www/xcart
+
+    mariadb:
+        build: ./mariadb 
+        environment:
+            MYSQL_ROOT_PASSWORD: l0a1gG4Y8^6 
+            MYSQL_DATABASE: printfirm
+            MYSQL_USER: printfirm 
+            MYSQL_PASSWORD: l0a1gG4Y8^6 
+        volumes:
+            - /var/lib/mysql
