@@ -1,6 +1,6 @@
-FROM php:7.0-fpm-alpine 
+FROM php:5.5-fpm-alpine
 
-# Install dependencies 
+# Install dependencies
 RUN apk add --no-cache \
                        freetype \
                        freetype-dev \
@@ -26,7 +26,7 @@ RUN docker-php-ext-configure gd \
                                        iconv \
                                        opcache \
                                        mcrypt \
-                                       mysqli \
+    mysql \
                                        xml
 
 COPY php.ini /usr/local/etc/php/

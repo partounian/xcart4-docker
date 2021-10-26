@@ -8,23 +8,27 @@ services:
         links:
             - php
         volumes:
-            - ./xcart:/var/www/xcart 
+            - ./xcart:/var/www/xcart
 
     php:
-        build: ./php 
+        build: ./php
         expose:
             - 9000
         links:
-            - mariadb 
+            - mariadb
         volumes:
             - ./xcart:/var/www/xcart
 
     mariadb:
-        build: ./mariadb 
+        build: ./mariadb
+        expose:
+            - 3306
         environment:
-            MYSQL_ROOT_PASSWORD: l0a1gG4Y8^6 
-            MYSQL_DATABASE: printfirm
-            MYSQL_USER: printfirm 
-            MYSQL_PASSWORD: l0a1gG4Y8^6 
+            MYSQL_ROOT_PASSWORD: devpw
+            MYSQL_DATABASE: printfirm_com_development
+            MYSQL_USER: printfirm_com
+            MYSQL_PASSWORD: example_dbpassword
         volumes:
             - /var/lib/mysql
+            - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+            - ./xcart:/var/www/xcart
