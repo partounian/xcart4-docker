@@ -1,4 +1,5 @@
-version: '2'
+version: '3.2'
+
 services:
     nginx:
         build: ./nginx
@@ -23,6 +24,8 @@ services:
         build: ./mariadb
         expose:
             - 3306
+        ports:
+            - 3306:3306
         environment:
             MYSQL_ROOT_PASSWORD: devpw
             MYSQL_DATABASE: printfirm_com_development
