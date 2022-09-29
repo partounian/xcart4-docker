@@ -35,3 +35,8 @@ services:
             - /var/lib/mysql
             - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
             - ./xcart:/var/www/xcart
+
+    # node:
+    #     image: ./node
+    #     volumes:
+    #         - ./xcart:/var/www/xcart

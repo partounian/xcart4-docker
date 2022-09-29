@@ -7,8 +7,10 @@
 
 1. Clone this repo.
 2. Clone your X-Cart 4 repo inside here with the name "xcart" 
-3. Run `docker-compose build --pull && docker-compose up -d`
+3. Download https://drive.google.com/file/d/1lJLPsfLAD5pCasw3vLHdnFEIIbtNVAOf/view?usp=sharing and put it in docker-entrypoint-initdb.d/ it should automatically be imported
+4. Download https://drive.google.com/file/d/1TO_ZEa3KaBQK6CGtLsWU04n0SP9X8h5O/view?usp=sharing and put it in xcart/
+5. Run `docker-compose up --build` (if you want this to run the in background use `docker-compose up --build -d`)
 
 ## How do I shut it down? ##
 
-Run `docker-compose down`
+Run `docker-compose down` or close the terminal window
